@@ -32,3 +32,5 @@ all: $(TPROG)
 
 $(TPROG) : $(TOBJ) $(OBJ)
 	$(CXX) -o $@ $^ $(LFLAG) $(GTEST_LIB) $(GTEST_MAIN_LIB) -pthread
+
+MEtest.o: MEtest.cpp Dollar.h
