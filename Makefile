@@ -26,7 +26,10 @@ GTEST_MAIN_LIB=-lgtest_main
 
 CXXFLAGS=$(DFLAG) $(IFLAG)
 
-.PHONY : all clean
+.PHONY : test all clean
+
+test: all
+	./$(TPROG)
 
 all: $(TPROG)
 
