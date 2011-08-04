@@ -6,7 +6,7 @@ TSRC := MEtest.cpp
 
 # Product-related files
 SRC :=
-INC := Dollar.h
+INC := Dollar.h Franc.h
 
 # Shouldn't change anything below here
 
@@ -36,4 +36,4 @@ all: $(TPROG)
 $(TPROG) : $(TOBJ) $(OBJ)
 	$(CXX) -o $@ $^ $(LFLAG) $(GTEST_LIB) $(GTEST_MAIN_LIB) -pthread
 
-MEtest.o: MEtest.cpp Dollar.h
+MEtest.o: MEtest.cpp $(INC)
