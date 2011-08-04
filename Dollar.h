@@ -1,6 +1,6 @@
 class Dollar {
  public:
  Dollar(int amount) : amount(amount) {}
-  void times(int multiplier) {amount *= multiplier;}
+  Dollar times(int multiplier) {return Dollar(amount = multiplier);}
   int amount;
 };
