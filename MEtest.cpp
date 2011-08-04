@@ -5,7 +5,9 @@
 
 TEST(MoneyTest, Multiplication) {
   Dollar five(5);
-  five.times(2);
-  EXPECT_EQ(10, five.amount);
+  Dollar product = five.times(2);
+  EXPECT_EQ(10, product.amount);
+  product = five.times(3);
+  EXPECT_EQ(15, product.amount);
 }
 
