@@ -27,3 +27,8 @@ TEST(MoneyTest, FrancMultiplication) {
   product = five.times(3);
   EXPECT_EQ(Franc(15), product);
 }
+
+TEST(MoneyTest, Currency) {
+  EXPECT_STREQ("USD", Dollar(1).currency());
+  EXPECT_STREQ("CHF", Franc(1).currency());
+}
