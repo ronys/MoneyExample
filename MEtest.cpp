@@ -2,6 +2,8 @@
 #include "gtest/gtest.h"
 
 #include "Money.h"
+#include "Expr.h"
+#include "Bank.h"
 
 TEST(MoneyTest, Multiplication) {
   Money five(5, Money::USD);
@@ -22,4 +24,12 @@ TEST(MoneyTest, Equality) {
 TEST(MoneyTest, Currency) {
   EXPECT_EQ(Money::USD, Money(1, Money::USD).currency());
   EXPECT_EQ(Money::CHF, Money(1, Money::CHF).currency());
+}
+
+TEST(MoneyTest, SimpleAddition) {
+  Money five(5, Money::USD);
+  Expr sum = five + five;
+  Bank bank;
+  Money converted = bank.convert(sum, Money::USD);
+  EXPECT_EQ(Money(10, Money::USD), converted);
 }
