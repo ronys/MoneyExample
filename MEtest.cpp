@@ -1,34 +1,25 @@
 // Test framework for multi-currency example
 #include "gtest/gtest.h"
 
-#include "Dollar.h"
-#include "Franc.h"
+#include "Money.h"
 
 TEST(MoneyTest, Multiplication) {
-  Dollar five(5);
-  Dollar product = five.times(2);
-  EXPECT_EQ(Dollar(10), product);
+  Money five(5, Money::USD);
+  Money product = five.times(2);
+  EXPECT_EQ(Money(10, Money::USD), product);
   product = five.times(3);
-  EXPECT_EQ(Dollar(15), product);
+  EXPECT_EQ(Money(15, Money::USD), product);
 }
 
 TEST(MoneyTest, Equality) {
-  EXPECT_EQ(Dollar(5), Dollar(5));
-  EXPECT_NE(Dollar(5), Dollar(6));
-  EXPECT_EQ(Franc(5), Franc(5));
-  EXPECT_NE(Franc(5), Franc(6));
-  EXPECT_NE(Franc(5), Dollar(5));
-}
-
-TEST(MoneyTest, FrancMultiplication) {
-  Franc five(5);
-  Franc product = five.times(2);
-  EXPECT_EQ(Franc(10), product);
-  product = five.times(3);
-  EXPECT_EQ(Franc(15), product);
+  EXPECT_EQ(Money(5, Money::USD), Money(5, Money::USD));
+  EXPECT_NE(Money(5, Money::USD), Money(6, Money::USD));
+  EXPECT_EQ(Money(5, Money::CHF), Money(5, Money::CHF));
+  EXPECT_NE(Money(5, Money::CHF), Money(6, Money::CHF));
+  EXPECT_NE(Money(5, Money::CHF), Money(5, Money::USD));
 }
 
 TEST(MoneyTest, Currency) {
-  EXPECT_EQ(Money::USD, Dollar(1).currency());
-  EXPECT_EQ(Money::CHF, Franc(1).currency());
+  EXPECT_EQ(Money::USD, Money(1, Money::USD).currency());
+  EXPECT_EQ(Money::CHF, Money(1, Money::CHF).currency());
 }
