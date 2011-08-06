@@ -32,4 +32,7 @@ TEST(MoneyTest, SimpleAddition) {
   Bank bank;
   Money converted = bank.convert(sum, Money::USD);
   EXPECT_EQ(Money(10, Money::USD), converted);
+  EXPECT_EQ(Money(7, Money::USD),
+            bank.convert(Money(3, Money::USD) +
+                         Money(4, Money::USD), Money::USD));
 }
