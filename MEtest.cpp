@@ -42,4 +42,6 @@ TEST(MoneyTest, ConvertCurrency) {
   bank.addRate(Money::CHF, Money::USD, 2);
   Money result = bank.convert(Money(2, Money::CHF), Money::USD);
   EXPECT_EQ(Money(1, Money::USD), result);
+  EXPECT_EQ(Money(2, Money::CHF),
+            bank.convert(Money(1, Money::USD), Money::CHF));
 }

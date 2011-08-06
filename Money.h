@@ -6,7 +6,7 @@ class Bank;
 class Money
 {
  public:
-  enum CURRENCY {USD, CHF};
+  enum CURRENCY {USD, CHF, LAST_CURRENCY};
  Money(int amount, CURRENCY currency) : m_amount(amount), m_currency(currency)
   {}
   CURRENCY currency() const {return m_currency;}
