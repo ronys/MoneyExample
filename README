@@ -1,0 +1,10 @@
+This project roughly follows Kent Beck's Money Example as described in
+Part I of his "Test-Driven Development by Example" book.
+The main differences are due to the code being written in C++ rather
+than Java, and using the GoogleTest test framework.
+This has been developed under Linux, but should be straightforward to
+adopt to other platforms. The only external dependency (aside from C++
+std stuff) is the gTest framework, which is pointed to in the
+Makefile.
+I'm sure that this can be redone to give a cleaner or "better"
+implementation, but for teaching purposes, this is Good Enough.
