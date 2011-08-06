@@ -47,3 +47,12 @@ TEST(MoneyTest, ConvertCurrency) {
   EXPECT_EQ(Money(1, Money::CHF),
             bank.convert(Money(1, Money::CHF), Money::CHF));
 }
+
+TEST(MoneyTest, MixedAddition) {
+  Bank bank;
+  bank.addRate(Money::CHF, Money::USD, 2);
+  Money fiveBucks(5, Money::USD);
+  Money tenFrancs(10, Money::CHF);
+  Money result = bank.convert(fiveBucks + tenFrancs, Money::USD);
+  EXPECT_EQ(Money(10, Money::USD), result);
+}
