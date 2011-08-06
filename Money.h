@@ -1,7 +1,7 @@
 #ifndef __MONEY_H
 #define __MONEY_H
 
-#include "Expr.h"
+class Bank;
 
 class Money
 {
@@ -15,13 +15,12 @@ class Money
   {return rhs.m_currency == m_currency && rhs.m_amount == m_amount;}
   bool operator!=(const Money &rhs) const {return !(rhs == *this);}
 
-  Expr operator+(const Money &rhs) const {return Expr(*this, rhs);}
-  
   Money times(int multiplier) {return Money(m_amount * multiplier, m_currency);}
 
- protected:
+ private:
   int m_amount;
   CURRENCY m_currency;
+  friend class Bank;
 };
 #endif /* __MONEY_H */
 
