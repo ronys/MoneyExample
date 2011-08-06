@@ -9,6 +9,8 @@
 class Bank {
  public:
   Money convert(const Expr &value, Money::CURRENCY currency);
+  Money convert(const Money &value, Money::CURRENCY currency);
+  void addRate(Money::CURRENCY from, Money::CURRENCY to, int rate);
 };
 
 #endif /* __BANK_H */

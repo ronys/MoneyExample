@@ -36,3 +36,10 @@ TEST(MoneyTest, SimpleAddition) {
             bank.convert(Money(3, Money::USD) +
                          Money(4, Money::USD), Money::USD));
 }
+
+TEST(MoneyTest, ConvertCurrency) {
+  Bank bank;
+  bank.addRate(Money::CHF, Money::USD, 2);
+  Money result = bank.convert(Money(2, Money::CHF), Money::USD);
+  EXPECT_EQ(Money(1, Money::USD), result);
+}
