@@ -44,4 +44,6 @@ TEST(MoneyTest, ConvertCurrency) {
   EXPECT_EQ(Money(1, Money::USD), result);
   EXPECT_EQ(Money(2, Money::CHF),
             bank.convert(Money(1, Money::USD), Money::CHF));
+  EXPECT_EQ(Money(1, Money::CHF),
+            bank.convert(Money(1, Money::CHF), Money::CHF));
 }
