@@ -29,6 +29,6 @@ TEST(MoneyTest, FrancMultiplication) {
 }
 
 TEST(MoneyTest, Currency) {
-  EXPECT_STREQ("USD", Dollar(1).currency());
-  EXPECT_STREQ("CHF", Franc(1).currency());
+  EXPECT_EQ(Money::USD, Dollar(1).currency());
+  EXPECT_EQ(Money::CHF, Franc(1).currency());
 }

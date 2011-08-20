@@ -2,7 +2,6 @@
 
 class Franc : public Money {
  public:
- Franc(int amount) : Money(amount) {}
-  virtual const char *currency() const {return "CHF";}
-  Franc times(int multiplier) {return Franc(amount * multiplier);}
+ Franc(int amount) : Money(amount, CHF) {}
+  Franc times(int multiplier) {return Franc(m_amount * multiplier);}
 };
