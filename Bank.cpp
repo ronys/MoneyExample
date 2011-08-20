@@ -2,7 +2,9 @@
 
 Money Bank::convert(const Expr &value, Money::CURRENCY currency)
 {
-  return Money(value.m_m1.m_amount + value.m_m2.m_amount, Money::USD);
+  Money m1 = convert(value.m_m1, currency);
+  Money m2 = convert(value.m_m2, currency);
+  return Money(m1.m_amount + m2.m_amount, currency);
 }
 
 Money Bank::convert(const Money &value, Money::CURRENCY currency)
