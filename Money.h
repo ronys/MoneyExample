@@ -4,6 +4,7 @@ class Money
 {
  public:
  Money(int amount) : amount(amount) {}
+  virtual const char *currency() const = 0;
   virtual ~Money() {}
 
   bool operator==(const Money &lhs) const
