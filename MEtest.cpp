@@ -13,4 +13,5 @@ TEST(MoneyTest, Multiplication) {
 
 TEST(MoneyTest, Equality) {
   EXPECT_EQ(Dollar(5), Dollar(5));
+  EXPECT_NE(Dollar(5), Dollar(6));
 }
