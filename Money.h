@@ -4,6 +4,9 @@ class Money
 {
  public:
  Money(int amount) : amount(amount) {}
+
+  bool operator==(const Money &lhs) const {return lhs.amount == this->amount;}
+  bool operator!=(const Money &lhs) const {return !(lhs == *this);}
  protected:
   int amount;
 };
