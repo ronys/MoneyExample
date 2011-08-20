@@ -5,8 +5,8 @@ TPROG := testMoney
 TSRC := MEtest.cpp
 
 # Product-related files
-SRC := dollar.cpp
-INC := dollar.h
+SRC :=
+INC := Dollar.h
 
 # Shouldn't change anything below here
 
