@@ -81,8 +81,6 @@
     <ClCompile Include="MEtest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Dollar.h" />
-    <ClInclude Include="Franc.h" />
     <ClInclude Include="Money.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -20,12 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Dollar.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Franc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Money.h">
       <Filter>Header Files</Filter>
     </ClInclude>
