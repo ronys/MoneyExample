@@ -26,5 +26,8 @@
     <ClInclude Include="Franc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Money.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
