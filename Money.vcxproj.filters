@@ -23,5 +23,8 @@
     <ClInclude Include="Dollar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Franc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
