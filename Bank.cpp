@@ -7,12 +7,18 @@ Money Bank::convert(const Expr &value, Money::CURRENCY currency)
 
 Money Bank::convert(const Money &value, Money::CURRENCY currency)
 {
-  int rate = 2;
-  return Money(value.m_amount / rate, currency);
+  if (value.m_currency == currency)
+    return value;
+  else {
+    double rate = rates[value.m_currency][currency];
+    return Money(value.m_amount / rate, currency);
+  }
 }
 
-void Bank::addRate(Money::CURRENCY from, Money::CURRENCY to, int rate)
+void Bank::addRate(Money::CURRENCY from, Money::CURRENCY to, double rate)
 {
+  rates[from][to] = rate;
+  rates[to][from] = 1.0/rate;
 }
 
 
