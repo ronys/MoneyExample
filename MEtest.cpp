@@ -15,6 +15,9 @@ TEST(MoneyTest, Multiplication) {
 TEST(MoneyTest, Equality) {
   EXPECT_EQ(Dollar(5), Dollar(5));
   EXPECT_NE(Dollar(5), Dollar(6));
+  EXPECT_EQ(Franc(5), Franc(5));
+  EXPECT_NE(Franc(5), Franc(6));
+  EXPECT_NE(Franc(5), Dollar(5));
 }
 
 TEST(MoneyTest, FrancMultiplication) {

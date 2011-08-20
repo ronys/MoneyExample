@@ -6,7 +6,7 @@ TSRC := MEtest.cpp
 
 # Product-related files
 SRC :=
-INC := Dollar.h Franc.h
+INC := Dollar.h Franc.h Money.h
 
 # Shouldn't change anything below here
 
