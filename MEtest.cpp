@@ -11,3 +11,6 @@ TEST(MoneyTest, Multiplication) {
   EXPECT_EQ(15, product.amount);
 }
 
+TEST(MoneyTest, Equality) {
+  EXPECT_EQ(Dollar(5), Dollar(5));
+}
